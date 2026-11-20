@@ -1,0 +1,11 @@
+let string = "   Hello Hello World world   ";
+console.log(string.indexOf("World"));
+console.log(string.length);
+console.log(string.lastIndexOf("world"));
+console.log(string.slice(1,7));
+console.log(string.substr(1,7));
+console.log(string.replace("Hello","Hola"));
+console.log(string.toUpperCase());
+console.log(string.toLowerCase());
+console.log(string.trim());
+console.log(string.split(" "));
