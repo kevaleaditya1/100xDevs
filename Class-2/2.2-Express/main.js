@@ -64,15 +64,11 @@ res.json({
 })
 })
 
-app.listen(port,()=>{
-    console.log("Server is running on port " + port);
-})
-
 app.get("/health-checkup",function(req,res){
     const kidneyId = req.query.kidneyId;
     const username = req.headers.username;
     const password = req.headers.password;
-    if(username != "admin" && password != "admin"){
+    if(username != "admin" || password != "admin"){
         res.status(403).json({
             "message": "Unauthorized"
         });
@@ -86,6 +82,11 @@ app.get("/health-checkup",function(req,res){
     }
     res.send("Your Heart is healthy");
 })
+
+app.listen(port,()=>{
+    console.log("Server is running on port " + port);
+})
+
 /*function calculateSum(n) {
     let sum = 0;
     for (let i = 1; i <= n; i++) {
